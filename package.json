@@ -1,0 +1,78 @@
+{
+  "name": "kintone-dev-template",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "description": "Kintone development template using webpack, babel, and ginue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production --config webpack.config.cjs",
+    "watch": "webpack --mode production --watch",
+    "lint": "eslint src/**/*.js",
+    "fix": "eslint src/**/*.js --fix",
+    "upload:dev": "NODE_ENV=development node upload.js",
+    "upload:prod": "NODE_ENV=production node upload.js",
+    "design:export:dev": "node ginue-manager.cjs export",
+    "design:export:prod": "node ginue-manager.cjs export",
+    "design:import:dev": "node ginue-manager.cjs import",
+    "design:import:prod": "node ginue-manager.cjs import",
+    "design:export:all:dev": "node ginue-manager.cjs export all dev",
+    "design:export:all:prod": "node ginue-manager.cjs export all prod",
+    "design:import:all:prod": "node ginue-manager.cjs import all prod",
+    "design:sync": "npm run design:export:dev && npm run design:import:prod",
+    "design:sync:all": "npm run design:export:all:dev && npm run design:import:all:prod",
+    "design:list": "node helper.cjs list",
+    "design:list:enabled": "node helper.cjs list --enabled",
+    "design:status": "node helper.cjs status",
+    "design:create": "node helper.cjs create",
+    "design:filter": "node helper.cjs filter",
+    "design:groups": "node helper.cjs groups"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/kintone-dev-template.git"
+  },
+  "keywords": [
+    "kintone",
+    "webpack",
+    "babel",
+    "ginue",
+    "template"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-org/kintone-dev-template/issues"
+  },
+  "homepage": "https://github.com/your-org/kintone-dev-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/register": "^7.26.0",
+    "@cybozu/eslint-config": "^16.0.1",
+    "@kintone/customize-uploader": "^8.0.14",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^6.11.0",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.3.0",
+    "glob": "^8.1.0",
+    "prettier": "^3.0.0",
+    "sass": "^1.85.1",
+    "sass-loader": "^16.0.5",
+    "webpack": "^5.96.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@kintone/rest-api-client": "^5.7.4",
+    "axios": "^1.7.9",
+    "core-js": "^3.39.0",
+    "dayjs": "^1.11.0",
+    "js-yaml": "^4.1.0",
+    "node-fetch": "^3.3.2",
+    "node-polyfill-webpack-plugin": "^2.0.1"
+  },
+  "type": "module"
+}

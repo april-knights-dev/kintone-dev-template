@@ -1,0 +1,76 @@
+{
+  "apps": {
+    "sampleApp": {
+      "name": "サンプルアプリ",
+      "description": "kintoneカスタマイズ開発のサンプルアプリケーション",
+      "environments": {
+        "dev": {
+          "appId": "1",
+          "domain": "your-dev-domain.cybozu.com"
+        },
+        "prod": {
+          "appId": "1",
+          "domain": "your-prod-domain.cybozu.com"
+        }
+      },
+      "category": "sample",
+      "tags": [
+        "sample",
+        "template"
+      ],
+      "enabled": true,
+      "priority": 1,
+      "files": {
+        "fields": "form.json",
+        "layout": "app_form_layout.json",
+        "views": "app_views.json",
+        "settings": "app_settings.json",
+        "permissions": "app_acl.json",
+        "customize": "app_customize.json"
+      },
+      "history": {
+        "lastExported": null,
+        "lastImported": null,
+        "lastModified": null
+      }
+    }
+  },
+  "environments": {
+    "dev": {
+      "name": "開発環境",
+      "description": "開発・テスト用のkintone環境"
+    },
+    "prod": {
+      "name": "本番環境",
+      "description": "本番運用のkintone環境"
+    }
+  },
+  "categories": {
+    "sample": {
+      "name": "サンプル",
+      "description": "テンプレート・サンプルアプリケーション"
+    },
+    "master": {
+      "name": "マスタ",
+      "description": "マスタデータ管理アプリケーション"
+    },
+    "workflow": {
+      "name": "ワークフロー",
+      "description": "業務フロー・承認プロセス管理"
+    },
+    "report": {
+      "name": "レポート",
+      "description": "集計・分析・レポート機能"
+    }
+  },
+  "config": {
+    "defaultEnvironment": "dev",
+    "autoBackup": true,
+    "validateBeforePush": true,
+    "excludeFields": ["REFERENCE_TABLE"],
+    "customizeUploadConfig": {
+      "retryCount": 3,
+      "timeout": 30000
+    }
+  }
+}
