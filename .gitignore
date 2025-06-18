@@ -49,3 +49,4 @@ backup-*
 # kintone specific
 design/temp/
 temp/
+app_schema_output/

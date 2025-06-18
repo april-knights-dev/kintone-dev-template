@@ -163,12 +163,15 @@ class AppSchemaGenerator {
         for (const [appName, data] of Object.entries(appGroups)) {
             if (data.fields && data.fields.properties) {
                 const extractedData = this.extractFields(data.fields.properties, data.layout);
+                const appCategory = this.categorizeApp(appName);
+                console.log(`🏷️  App '${appName}' categorized as '${appCategory}'`);
+                
                 const app = {
                     name: appName,
                     sanitizedName: this.sanitizeAppName(appName),
                     fields: extractedData.fields,
                     layoutGroups: extractedData.layoutGroups || [],
-                    category: this.categorizeApp(appName)
+                    category: appCategory
                 };
                 this.apps.push(app);
             }
@@ -327,9 +330,16 @@ class AppSchemaGenerator {
     categorizeApp(appName) {
         // apps-registry.jsonからカテゴリ情報を優先的に取得
         if (this.appsRegistry && this.appsRegistry.apps) {
+            // まずアプリキーで直接検索
+            if (this.appsRegistry.apps[appName] && this.appsRegistry.apps[appName].category) {
+                console.log(`📍 Found category for ${appName} by key: ${this.appsRegistry.apps[appName].category}`);
+                return this.appsRegistry.apps[appName].category;
+            }
+            
+            // アプリキーで見つからない場合は、アプリ名で検索
             for (const [appKey, appInfo] of Object.entries(this.appsRegistry.apps)) {
                 if (appInfo.name === appName && appInfo.category) {
-                    console.log(`📍 Found category for ${appName}: ${appInfo.category}`);
+                    console.log(`📍 Found category for ${appName} by name: ${appInfo.category}`);
                     return appInfo.category;
                 }
             }
@@ -784,6 +794,10 @@ ${this.generateCategoryColors()}
             if (this.categories[categoryKey]) {
                 html += `
             <button class="tab-button" onclick="showCategory('${categoryKey}')">${this.categories[categoryKey].name}</button>`;
+            } else {
+                console.warn(`⚠️  Category '${categoryKey}' not found in definitions, using key as name`);
+                html += `
+            <button class="tab-button" onclick="showCategory('${categoryKey}')">${categoryKey}</button>`;
             }
         }
         
