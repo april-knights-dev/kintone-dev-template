@@ -1,0 +1,60 @@
+{
+  "layout": [
+    {
+      "type": "ROW",
+      "fields": [
+        {
+          "code": "created_date",
+          "type": "CREATED_TIME",
+          "size": {
+            "width": "200"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ROW",
+      "fields": [
+        {
+          "code": "department",
+          "type": "DROP_DOWN",
+          "size": {
+            "width": "200"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ROW",
+      "fields": [
+        {
+          "code": "name",
+          "type": "SINGLE_LINE_TEXT",
+          "size": {
+            "width": "200"
+          }
+        },
+        {
+          "code": "email",
+          "type": "SINGLE_LINE_TEXT", 
+          "size": {
+            "width": "300"
+          }
+        }
+      ]
+    },
+    {
+      "type": "ROW", 
+      "fields": [
+        {
+          "code": "notes",
+          "type": "MULTI_LINE_TEXT",
+          "size": {
+            "width": "400",
+            "height": "100"
+          }
+        }
+      ]
+    }
+  ]
+}

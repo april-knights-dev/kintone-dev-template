@@ -1,0 +1,30 @@
+{
+  "properties": {
+    "name": {
+      "type": "SINGLE_LINE_TEXT",
+      "label": "氏名",
+      "required": true
+    },
+    "email": {
+      "type": "SINGLE_LINE_TEXT",
+      "label": "メールアドレス",
+      "required": true,
+      "unique": true
+    },
+    "department": {
+      "type": "DROP_DOWN",
+      "label": "部署",
+      "required": false
+    },
+    "notes": {
+      "type": "MULTI_LINE_TEXT",
+      "label": "備考",
+      "required": false
+    },
+    "created_date": {
+      "type": "CREATED_TIME",
+      "label": "作成日時",
+      "required": false
+    }
+  }
+}

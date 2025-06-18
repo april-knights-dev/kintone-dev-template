@@ -12,7 +12,7 @@ kintoneカスタマイズ開発のためのテンプレートプロジェクト�
 
 ## 📋 前提条件
 
-- Node.js 13.0.0以上
+- Node.js 20.0.0以上
 - npm または yarn
 - kintoneアカウント（開発環境・本番環境）
 
@@ -79,16 +79,19 @@ KINTONE_PROD_PASSWORD=your-password
 ### アプリ設計の管理
 
 #### 開発環境からアプリ設計をpull
+
 ```bash
 npm run design:export:dev
 ```
 
 #### 本番環境にアプリ設計をpush
+
 ```bash
 npm run design:import:prod
 ```
 
 #### 開発→本番への同期
+
 ```bash
 npm run design:sync
 ```
@@ -96,16 +99,19 @@ npm run design:sync
 ### JavaScriptカスタマイズの開発
 
 #### ビルド（本番用）
+
 ```bash
 npm run build
 ```
 
 #### 監視モード（開発用）
+
 ```bash
 npm run watch
 ```
 
 #### カスタマイズのアップロード
+
 ```bash
 # 開発環境へアップロード
 npm run upload:dev
@@ -117,11 +123,13 @@ npm run upload:prod
 ### コード品質管理
 
 #### ESLintチェック
+
 ```bash
 npm run lint
 ```
 
 #### ESLint自動修正
+
 ```bash
 npm run fix
 ```
@@ -153,6 +161,7 @@ kintone-dev-template/
 ## 🔧 コマンド一覧
 
 ### アプリ設計管理
+
 - `npm run design:export:dev` - 開発環境からpull
 - `npm run design:export:prod` - 本番環境からpull
 - `npm run design:import:dev` - 開発環境にpush
@@ -162,12 +171,14 @@ kintone-dev-template/
 - `npm run design:status` - アプリ状態確認
 
 ### 開発・ビルド
+
 - `npm run build` - 本番用ビルド
 - `npm run watch` - 監視モード
 - `npm run lint` - ESLintチェック
 - `npm run fix` - ESLint自動修正
 
 ### アップロード
+
 - `npm run upload:dev` - 開発環境へアップロード
 - `npm run upload:prod` - 本番環境へアップロード
 

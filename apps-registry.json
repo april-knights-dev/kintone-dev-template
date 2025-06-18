@@ -51,7 +51,7 @@
       "description": "テンプレート・サンプルアプリケーション"
     },
     "master": {
-      "name": "マスタ",
+      "name": "マスタデータ",
       "description": "マスタデータ管理アプリケーション"
     },
     "workflow": {
@@ -59,8 +59,24 @@
       "description": "業務フロー・承認プロセス管理"
     },
     "report": {
-      "name": "レポート",
+      "name": "レポート・分析",
       "description": "集計・分析・レポート機能"
+    },
+    "business": {
+      "name": "業務管理",
+      "description": "日常業務・プロジェクト管理"
+    },
+    "finance": {
+      "name": "財務・経理",
+      "description": "財務・経理・会計関連"
+    },
+    "admin": {
+      "name": "システム管理",
+      "description": "システム設定・管理機能"
+    },
+    "other": {
+      "name": "その他",
+      "description": "その他のアプリケーション"
     }
   },
   "config": {

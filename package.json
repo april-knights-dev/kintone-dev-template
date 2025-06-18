@@ -28,7 +28,8 @@
     "design:status": "node helper.cjs status",
     "design:create": "node helper.cjs create",
     "design:filter": "node helper.cjs filter",
-    "design:groups": "node helper.cjs groups"
+    "design:groups": "node helper.cjs groups",
+    "generate:schema": "node generate_app_schema.cjs"
   },
   "repository": {
     "type": "git",
